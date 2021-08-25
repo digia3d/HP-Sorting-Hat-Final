@@ -45,7 +45,7 @@ export default function App() {
 		if (personality === 'Red' && showHouse===true) {
 		setBackColor(require("./assets/banners/Gryffindor.jpg"));}
 	};
-	
+	// Always check which house has most points in order to reveal the respective background
 	useEffect(() => {
 		changeColor()
 	});
