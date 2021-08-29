@@ -8,25 +8,29 @@ export default function App() {
 	const [showHouse, setShowHouse] = useState(false);
 	
 	// Total score per house setters
-	const [totalRed, setRed] = useState(0);
-	const [totalGreen, setGreen] = useState(0);
-	const [totalBlue, setBlue] = useState(0);
+	const [totalGryffindor, setGryffindor] = useState(0);
+	const [totalSlytherin, setSlytherin] = useState(0);
+	const [totalRavenclaw, setRavenclaw] = useState(0);
+	const [totalHufflepuff, setHufflepuff] = useState(0);
 
 	//Final result setter
-	const [house, setHouse] = useState("kharya");
+	const [house, setHouse] = useState("Muggle");
 
 	//Sorting function
-	const answerHandler = (red, green, blue) => {
-		setRed(totalRed + red);
-		setGreen(totalGreen + green);
-		setBlue(totalBlue + blue);
+	const answerHandler = (gryffindor, slytherin, ravenclaw, hufflepuff) => {
+		setGryffindor(totalGryffindor + gryffindor);
+		setSlytherin(totalSlytherin + slytherin);
+		setRavenclaw(totalRavenclaw + ravenclaw);
+		setHufflepuff(totalHufflepuff + hufflepuff);
 
-		switch (Math.max(totalRed, totalGreen, totalBlue)) {
-			case totalRed: setHouse("Red")
+		switch (Math.max(totalGryffindor, totalSlytherin, totalRavenclaw, totalHufflepuff)) {
+			case totalGryffindor: setHouse("Gryffindor")
 				break;
-			case totalGreen: setHouse("Green")
+			case totalSlytherin: setHouse("Slytherin")
 				break;
-			case totalBlue: setHouse("Blue")
+			case totalRavenclaw: setHouse("Ravenclaw")
+				break;
+			case totalHufflepuff: setHouse("Hufflepuff")
 				break;
 			default:
 				break; 
@@ -42,8 +46,14 @@ export default function App() {
 	
 	const [banner, setBanner] = useState('')
 	const changeBanner = () => {
-		if (house === 'Red' && showHouse===true) {
-		setBanner(require("./assets/banners/Gryffindor.jpg"));}
+		if (house === 'Gryffindor' && showHouse===true) {
+			setBanner(require("./assets/banners/Gryffindor.jpg"));}
+		if (house === 'Slytherin' && showHouse===true) {
+			setBanner(require("./assets/banners/Slytherin.jpg"));}
+		if (house === 'Ravenclaw' && showHouse===true) {
+			setBanner(require("./assets/banners/Ravenclaw.jpg"));}
+		if (house === 'Hufflepuff' && showHouse===true) {
+			setBanner(require("./assets/banners/Hufflepuff.jpg"));}
 	};
 	// Always check which house has most points in order to reveal the respective banner
 	useEffect(() => {
@@ -58,9 +68,9 @@ export default function App() {
 			<div>
 			{showHouse ? (
 				<div className='score-section'>
-					You're a 
+					You belong in 
 					<br/>
-					<p className='house'>Griffondor</p> 
+					<p className='house'>{house}</p> 
 				</div>
 				
 			) : (
@@ -73,8 +83,8 @@ export default function App() {
 						<div className='question-text'>{questions[currentQuestion].questionText}</div>
 					</div>
 					<div className='answer-section'>
-						{questions[currentQuestion].answerOptions.map((answerOption) => (
-							<button onClick={() => {answerHandler(answerOption.red, answerOption.green, answerOption.blue);}}>{answerOption.answerText}</button>
+						{questions[currentQuestion].options.map((option) => (
+							<button onClick={() => {answerHandler(option.gryffindor, option.slytherin, option.ravenclaw, option.hufflepuff);}}>{option.optionText}</button>
 						))}
 					</div>
 				</div>
@@ -85,8 +95,11 @@ export default function App() {
 		<>
 				<div className='intro-part'>
 					<div className='intro-text'>
-						Welcome to the Grand Hall!
-						You'll be asked a series of questions about various topics, and you must answer as truthfully as you can. By the end, the hat shall decide where you belong and tell you which house is yours. <br/>Good luck!	
+						Welcome to the Grand Hall! To find out which house you belong in, you'll be asked a series of questions about various topics, and you must answer as truthfully as you can. 
+						By the end, the hat will decide and tell you where you belong. <br/>Good luck!	
+					</div>
+					<div className='intro-exp'>
+						Hi there! This is more of a dev project than an actual quiz, it's made for fun, but feel free to drop by and say hi from the links below :) <br/>Enjoy!
 					</div>
 					<button className='start-button button-loader' onClick={() => setShowQuiz(true)}>Start</button>
 				</div>

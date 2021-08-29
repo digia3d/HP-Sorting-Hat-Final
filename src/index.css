@@ -102,18 +102,18 @@ body:before {
   flex-direction: column;
   text-align: center;
   font-size: 28px;
-  margin-top: 30%;
-  margin-bottom: 20%;
+  margin-top: 35%;
+  margin-bottom: 15%;
   justify-content: center;
   align-content: center;
   transition: 1;
   animation: fadein 2s;
-  text-shadow: 3px 3px 4px #000;
+  text-shadow: 4px 4px 4px #000;
 }
 
 @keyframes glow {
   to {
-      text-shadow: 5px 5px 40px rgb(1, 155, 197);
+      text-shadow: 5px 5px 40px rgb(0, 106, 136);
   }
 }
 
@@ -130,6 +130,8 @@ body:before {
 
 .part-two {
   animation: fadein 2s;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 /* QUESTION/TIMER/LEFT SECTION */
@@ -153,6 +155,7 @@ body:before {
 
 .question-text {
   margin-bottom: 20px;
+  line-height: 1.6;
   animation: fadein 0.5s;
 }
 
@@ -206,6 +209,17 @@ button {
   text-align-last: center;
   font-size: large;
   margin-top: 5%;
+  margin-bottom: 5%;
+  line-height: 140%;
+}
+.intro-exp {
+  align-self: center;
+  margin-bottom: 0px;
+  justify-content: center;
+  text-align: justify;
+  text-align-last: center;
+  font-size: small;
+  font-style: italic;
   margin-bottom: 5%;
   line-height: 140%;
 }
