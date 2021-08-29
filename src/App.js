@@ -4,7 +4,7 @@ import { questions } from './data/Questions.js';
 export default function App() {
 	//Questions and house reveal setters
 	const [currentQuestion, setCurrentQuestion] = useState(0);
-	const [showTest, setShowTest] = useState(false);
+	const [showQuiz, setShowQuiz] = useState(false);
 	const [showHouse, setShowHouse] = useState(false);
 	
 	// Total score per house setters
@@ -13,20 +13,20 @@ export default function App() {
 	const [totalBlue, setBlue] = useState(0);
 
 	//Final result setter
-	const [personality, setPersonality] = useState("kharya");
+	const [house, setHouse] = useState("kharya");
 
 	//Sorting function
-	const handleAnswerOptionClick = (red, green, blue) => {
+	const answerHandler = (red, green, blue) => {
 		setRed(totalRed + red);
 		setGreen(totalGreen + green);
 		setBlue(totalBlue + blue);
 
 		switch (Math.max(totalRed, totalGreen, totalBlue)) {
-			case totalRed: setPersonality("Red")
+			case totalRed: setHouse("Red")
 				break;
-			case totalGreen: setPersonality("Green")
+			case totalGreen: setHouse("Green")
 				break;
-			case totalBlue: setPersonality("Blue")
+			case totalBlue: setHouse("Blue")
 				break;
 			default:
 				break; 
@@ -40,27 +40,27 @@ export default function App() {
 		}
 	};
 	
-	const [backColor, setBackColor] = useState('')
-	const changeColor = () => {
-		if (personality === 'Red' && showHouse===true) {
-		setBackColor(require("./assets/banners/Gryffindor.jpg"));}
+	const [banner, setBanner] = useState('')
+	const changeBanner = () => {
+		if (house === 'Red' && showHouse===true) {
+		setBanner(require("./assets/banners/Gryffindor.jpg"));}
 	};
-	// Always check which house has most points in order to reveal the respective background
+	// Always check which house has most points in order to reveal the respective banner
 	useEffect(() => {
-		changeColor()
+		changeBanner()
 	});
 
 	return (
 		<div>
 		<div className='main-title'>The Sorting Hat</div>
-		<div className='app' style={{borderRadius:'7px', backgroundPosition: '50%', backgroundBlendMode:'normal', backgroundImage: `url(${backColor})`}}>
-			{showTest ? (
+		<div className='app' style={{borderRadius:'7px', backgroundPosition: '50%', backgroundBlendMode:'normal', backgroundImage: `url(${banner})`}}>
+			{showQuiz ? (
 			<div>
 			{showHouse ? (
 				<div className='score-section'>
 					You're a 
 					<br/>
-					<p className='personality'>Griffondor</p> 
+					<p className='house'>Griffondor</p> 
 				</div>
 				
 			) : (
@@ -73,9 +73,8 @@ export default function App() {
 						<div className='question-text'>{questions[currentQuestion].questionText}</div>
 					</div>
 					<div className='answer-section'>
-					{changeColor()}
 						{questions[currentQuestion].answerOptions.map((answerOption) => (
-							<button onClick={() => {handleAnswerOptionClick(answerOption.red, answerOption.green, answerOption.blue);}}>{answerOption.answerText}</button>
+							<button onClick={() => {answerHandler(answerOption.red, answerOption.green, answerOption.blue);}}>{answerOption.answerText}</button>
 						))}
 					</div>
 				</div>
@@ -89,7 +88,7 @@ export default function App() {
 						Welcome to the Grand Hall!
 						You'll be asked a series of questions about various topics, and you must answer as truthfully as you can. By the end, the hat shall decide where you belong and tell you which house is yours. <br/>Good luck!	
 					</div>
-					<button className='start-button button-loader' onClick={() => setShowTest(true)}>Start</button>
+					<button className='start-button button-loader' onClick={() => setShowQuiz(true)}>Start</button>
 				</div>
 		</>
 		)}
