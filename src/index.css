@@ -97,6 +97,28 @@ body:before {
   animation: fadein 2s;
 }
 
+.discord {
+  font-size: 22px;
+  text-align: center;
+  position: fixed;
+  bottom: 5%;
+  right: 48%;
+  margin: 10;
+  animation: fadein 3s;
+  color: #f5f382;
+}
+
+.twitter {
+  font-size: 22px;
+  text-align: center;
+  position: fixed;
+  bottom: 5%;
+  right: 50.5%;
+  margin: 10;
+  animation: fadein 3s;
+  color: #f5f382;
+}
+
 .score-section {
   display: flex;
   flex-direction: column;
@@ -207,7 +229,8 @@ button {
   justify-content: center;
   text-align: justify;
   text-align-last: center;
-  font-size: large;
+  font-size: 18px;
+  font-weight: lighter;
   margin-top: 5%;
   margin-bottom: 5%;
   line-height: 140%;
@@ -218,8 +241,10 @@ button {
   justify-content: center;
   text-align: justify;
   text-align-last: center;
-  font-size: small;
-  font-style: italic;
+  font-size: 13px;
+  font-style:italic;
+  font-weight: 100;
+  color: #f5f382;
   margin-bottom: 5%;
   line-height: 140%;
 }

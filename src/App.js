@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { questions } from './data/Questions.js';
+import { IconContext } from "react-icons";
+import { FaTwitter, FaDiscord } from 'react-icons/fa';
 
 export default function App() {
 	//Questions and house reveal setters
@@ -99,13 +101,25 @@ export default function App() {
 						By the end, the hat will decide and tell you where you belong. <br/>Good luck!	
 					</div>
 					<div className='intro-exp'>
-						Hi there! This is more of a dev project than an actual quiz, it's made for fun, but feel free to drop by and say hi from the links below :) <br/>Enjoy!
+						This is more of a dev project than an actual quiz, it's made for fun, but feel free to drop by and say hi via the links below :) Enjoy!
 					</div>
 					<button className='start-button button-loader' onClick={() => setShowQuiz(true)}>Start</button>
 				</div>
 		</>
 		)}
 		</div>
+			<div>
+				<IconContext.Provider value={{ className: "twitter" }}>
+					<div>
+					<a href="https://twitter.com/qarnax"><FaTwitter /></a> 
+					</div>		
+				</IconContext.Provider>
+				<IconContext.Provider value={{ className: "discord" }}>
+					<div>
+					<a href="https://discord.gg/G7PHBeeU7m"><FaDiscord /></a>
+					</div>		
+				</IconContext.Provider>
+			</div>
 		</div>
 	);
 }
