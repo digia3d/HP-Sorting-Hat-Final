@@ -44,7 +44,7 @@ body {
   align-items: center;
   min-height: 97vh;
   /* Animation */
-  background-image: url('https://res.cloudinary.com/aw0696/image/upload/v1629840930/wallpaperflare.com_wallpaper_3.jpg');
+  background-image: url('./assets/background/Background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 1s;
