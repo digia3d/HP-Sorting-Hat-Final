@@ -8,10 +8,10 @@ body {
 
 .main-title {
   font-family: 'MonteCarlo', cursive;
-  font-size: 76px;  
+  font-size: 4.5vw;  
   position: fixed;
   top: 8%;
-  right: 39%;
+  right: 37.5%;
   align-content: center;
   display: flex;
   justify-content: space-evenly;
@@ -86,11 +86,11 @@ body:before {
 .app {
   z-index: 1;
   background-color: #273034;
-  width: 450px;
-  min-height: 200px;
+  width: 28vw;
+  min-height: 1vh;
   height: min-content;
   border-radius: 15px;
-  padding: 30px;
+  padding: 6%;
   margin-top: 20%;
   margin-bottom: 0%;
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
@@ -101,7 +101,7 @@ body:before {
 }
 
 .discord {
-  font-size: 22px;
+  font-size: calc(8px + 1vw);
   text-align: center;
   position: fixed;
   bottom: 5%;
@@ -112,7 +112,7 @@ body:before {
 }
 
 .twitter {
-  font-size: 22px;
+  font-size: calc(8px + 1vw);
   text-align: center;
   position: fixed;
   bottom: 5%;
@@ -126,7 +126,7 @@ body:before {
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-size: 28px;
+  font-size: calc(3px + 1.5vw);
   margin-top: 35%;
   margin-bottom: 15%;
   justify-content: center;
@@ -150,13 +150,13 @@ body:before {
   transition: 3;
   animation: fadein 5s, glow 1s infinite alternate;
   font-family: 'MonteCarlo', cursive;
-  font-size: 52px;
+  font-size: calc(6px + 3.5vw);
 }
 
 .part-two {
   animation: fadein 2s;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-left: 5vw;
+  margin-right: 5vw;
 }
 
 /* QUESTION/TIMER/LEFT SECTION */
@@ -173,15 +173,16 @@ body:before {
 }
 
 .question-count span {
-  font-size: 36px;
+  font-size: 2.5vw;
   font-family: 'MonteCarlo', cursive;
   animation: fadein 0.5s;
 }
 
 .question-text {
-  margin-bottom: 20px;
+  margin-bottom: 1.8vh;
   line-height: 1.6;
   animation: fadein 0.5s;
+  font-size: calc(5px+ 2vw);
 }
 
 .timer-text {
@@ -204,13 +205,13 @@ body:before {
 }
 
 button {
-  width: 400px;
-  font-size: 16px;
+  width: 26vw;
+  font-size: calc(4px + 0.7vw);
   color: #ffffff;
   background-color: transparent;
   border-radius: 7px;
   display: flex;
-  padding: 15px;
+  padding: 3%;
   margin-bottom: 8px;
   justify-content: flex-start;
   align-items: center;
@@ -232,7 +233,7 @@ button {
   justify-content: center;
   text-align: justify;
   text-align-last: center;
-  font-size: 18px;
+  font-size: calc(0.7vw + 6px);
   font-weight: lighter;
   margin-top: 5%;
   margin-bottom: 5%;
@@ -244,7 +245,7 @@ button {
   justify-content: center;
   text-align: justify;
   text-align-last: center;
-  font-size: 13px;
+  font-size: calc(0.7vw + 4px);
   font-style:italic;
   font-weight: 100;
   color: #f5f382;
@@ -253,8 +254,8 @@ button {
 }
 
 .start-button {
-  width: 200px;
-  font-size: 32px;
+  width: 15vw;
+  font-size: calc(5px + 2vw);
   font-family: 'MonteCarlo', cursive;
   align-self: center;
   color: #ffffff;
