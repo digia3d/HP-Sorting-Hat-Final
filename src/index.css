@@ -105,7 +105,7 @@ body:before {
   text-align: center;
   position: fixed;
   bottom: 5%;
-  right: 48%;
+  right: 47%;
   margin: 10;
   animation: fadein 3s;
   color: #f5f382;
@@ -116,7 +116,7 @@ body:before {
   text-align: center;
   position: fixed;
   bottom: 5%;
-  right: 50.5%;
+  right: 49.5%;
   margin: 10;
   animation: fadein 3s;
   color: #f5f382;
@@ -182,7 +182,7 @@ body:before {
   margin-bottom: 1.8vh;
   line-height: 1.6;
   animation: fadein 0.5s;
-  font-size: calc(5px+ 2vw);
+  font-size: calc(5px + 0.8vw);
 }
 
 .timer-text {
