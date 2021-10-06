@@ -8,7 +8,7 @@ export default function App() {
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showQuiz, setShowQuiz] = useState(false);
 	const [showHouse, setShowHouse] = useState(false);
-	
+
 	// Total score per house setters
 	const [totalGryffindor, setGryffindor] = useState(0);
 	const [totalSlytherin, setSlytherin] = useState(0);
@@ -35,7 +35,7 @@ export default function App() {
 			case totalHufflepuff: setHouse("Hufflepuff")
 				break;
 			default:
-				break; 
+				break;
 		};
 
 		const nextQuestion = currentQuestion + 1;
@@ -45,7 +45,7 @@ export default function App() {
 			setShowHouse(true);
 		}
 	};
-	
+
 	const [banner, setBanner] = useState('')
 	const changeBanner = () => {
 		if (house === 'Gryffindor' && showHouse===true) {
@@ -70,11 +70,11 @@ export default function App() {
 			<div>
 			{showHouse ? (
 				<div className='score-section'>
-					You belong in 
+					You belong in
 					<br/>
-					<p className='house'>{house}</p> 
+					<p className='house'>{house}</p>
 				</div>
-				
+
 			) : (
 				<>
 				<div className='part-two'>
@@ -90,15 +90,15 @@ export default function App() {
 						))}
 					</div>
 				</div>
-					
+
 				</>
 			)} </div>
 		) : (
 		<>
 				<div className='intro-part'>
 					<div className='intro-text'>
-						Welcome to the Grand Hall! To find out which house you belong in, you'll be asked a series of questions about various topics, and you must answer as truthfully as you can. 
-						By the end, the hat will decide and tell you where you belong. <br/>Good luck!	
+						Welcome to the Grand Hall! To find out which house you belong in, you'll be asked a series of questions about various topics, and you must answer as truthfully as you can.
+						By the end, the hat will decide and tell you where you belong. <br/>Good luck!
 					</div>
 					<div className='intro-exp'>
 						This is more of a dev project than an actual quiz, it's made for fun, but feel free to drop by and say hi via the links below :) Enjoy!
@@ -111,13 +111,13 @@ export default function App() {
 			<div>
 				<IconContext.Provider value={{ className: "twitter" }}>
 					<div>
-					<a href="https://twitter.com/qarnax"><FaTwitter /></a> 
-					</div>		
+					<a href="https://twitter.com/qarnax"><FaTwitter /></a>
+					</div>
 				</IconContext.Provider>
 				<IconContext.Provider value={{ className: "discord" }}>
 					<div>
-					<a href="https://discord.gg/G7PHBeeU7m"><FaDiscord /></a>
-					</div>		
+					<a href="https://discord.gg/VhPZV3csKn"><FaDiscord /></a>
+					</div>
 				</IconContext.Provider>
 			</div>
 		</div>
