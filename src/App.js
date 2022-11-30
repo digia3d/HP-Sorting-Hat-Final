@@ -109,11 +109,6 @@ export default function App() {
 		)}
 		</div>
 			<div>
-				<IconContext.Provider value={{ className: "twitter" }}>
-					<div>
-					<a href="https://twitter.com/qarnax"><FaTwitter /></a>
-					</div>
-				</IconContext.Provider>
 				<IconContext.Provider value={{ className: "discord" }}>
 					<div>
 					<a href="https://discord.gg/VhPZV3csKn"><FaDiscord /></a>
